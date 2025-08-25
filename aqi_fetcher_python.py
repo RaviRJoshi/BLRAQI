@@ -3,8 +3,12 @@ import json
 from datetime import datetime, timedelta
 from collections import defaultdict
 import time
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-API_KEY = 'YOUR_API_KEY_HERE'  # Get from https://openweathermap.org/api
+
+API_KEY = os.getenv('OPENWEATHER_KEY') # Get from https://openweathermap.org/api
 
 def get_aqi_data(lat, lon, days=10):
     """
@@ -137,9 +141,8 @@ def save_to_json(aqi_data, filename='aqi_data.json'):
 # Usage example
 if __name__ == "__main__":
     try:
-        # Example: New York City coordinates
-        lat = 40.7128
-        lon = -74.0060
+        lat = 77.7128
+        lon = 13.0060
         
         print("Fetching AQI data for the last 10 days...")
         aqi_data = get_aqi_data(lat, lon, days=10)
