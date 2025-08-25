@@ -12,7 +12,7 @@ load_dotenv()
 
 st.set_page_config(page_title="AQI Dashboard", layout="wide")
 
-st.title("Air Quality Index (AQI) Dashboard")
+st.title("Bangalore Air Quality Index (AQI) Dashboard")
 st.markdown("This app fetches and displays historical AQI data from the OpenWeatherMap API.")
 
 # Check for API key and guide the user if it's missing
